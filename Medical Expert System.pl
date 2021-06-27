@@ -2,33 +2,11 @@
 % Name : - Chamara M. Dodandeniya
 
 :- use_module(library(jpl)).
-start(Patient) :-sleep(0.4),
-		write('-----------------------------------------------------------------'),nl,
-		sleep(0.4),
-		write('*****************************************************************'),nl,
-		sleep(0.2),
-		write("###################||| EXPERT SYSTEM |||#########################"),nl,
-		sleep(0.4),
-		write('*****************************************************************'),nl,
-		sleep(0.4),
-		write('-----------------------------------------------------------------'),nl,nl,nl,
-
-
-
-
-
-
+start(Patient) :-
         hypothesis(Patient,Disease),
         write(Patient),write(', you '), write(' probably have '),write(Disease),write('.'),undo,
 		nl,nl,nl,
-		sleep(0.7),
-		write('*****************************************************************'),nl,
-		sleep(0.4),
-		write("################||| THANK YOU FOR USE ME |||#####################"),nl,
-		sleep(0.4),
-		write('*****************************************************************'),nl.
-
-
+		
     symptom(Patient,fever) :- verify(Patient," have a fever (y/n) ?").
 
     symptom(Patient,rash) :- verify(Patient," have a rash (y/n) ?").
@@ -146,12 +124,6 @@ pt(Patient):-
 
 end :-
 		nl,nl,nl,
-		sleep(0.7),
-		write('*****************************************************************'),nl,
-		sleep(0.4),
-		write("################||| THANK YOU FOR USE ME |||#####################"),nl,
-		sleep(0.4),
-		write('*****************************************************************'),nl.
 
 interface(X,Y,Z) :-
 	atom_concat(Y,X, FAtom),
